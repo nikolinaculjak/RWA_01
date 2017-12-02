@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function provjera(jmbg)
+{
+  document.write("Provjeravam..." + "<br>")
+  if(jmbg.length==13)
+  {
+    let DD=jmbg.slice(0,2);
+    let MM=jmbg.slice(2,4);
+    let GGG=jmbg.slice(4,7);
+    let RR=jmbg.slice(7,9);
+    let BBB=jmbg.slice(9,12);
+    let K=jmbg[12];
+    
+  if((GGG>900 && GGG<999) ||(GGG>000 && GGG<020)){ 
+    switch(MM){
+      case '01':
+      case '03':
+      case '05':
+      case '07':
+      case '08':
+      case '10':
+      case '12': if(DD>0 && DD <=31){
+         document.write("Datum rođenja je: " + DD + '.' + MM + '.' + GGG + "<br>");
+      }
+      break;
+      case '02': if(DD>0 && DD <=29){
+      document.write("Datum rođenja je: " + DD + '.' + MM + '.' + GGG + "<br>");
+      }
+      break;
+      case '04':
+      case '06':
+      case '09':
+      case '11':if(DD>0 && DD<=30){
+        document.write("Datum rođenja je: " + DD + '.' + MM + '.' + GGG + "<br>");
+      break;
+      }
+    }
+  }
+  if(RR==15)
+  {
+    document.write("Mjesto rođenja je Mostar" + "<br>");
+  }
+  if(BBB>0 && BBB <500)
+  document.write("Spol:muško" + "<br>");
+  else 
+  document.write("Spol:muško" + "<br>");
+  let L=11 - (( 7*(DD[0]+GGG[2]) + 6*(DD[1]+RR[0]) + 5*(MM[0]+RR[1]) + 4*(MM[1]+BBB[0]) + 3*(GGG[0]+BBB[1]) + 2*(GGG[1]+BBB[2]) ) % 11);
+  document.write(L + "<br>");
+  if(L<10)
+    L=K;
+  else L=0;
+  
+  document.write("Jmbg je ispravan" + "<br>");
+  }
+  else
+  document.write("Jmbg nema 13 znakova i/ili ima karaktere" + "<br>");
+}
+        </script>
+    </head>
+    <body>
+        <script>
+            let jmbg=prompt("Unesite jmbg");
+            provjera(jmbg);
+        </script>
+    </body>
+</html>

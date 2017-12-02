@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <script>
+           function fact(broj)
+           {
+              let faktorijel=1;
+              for(i=1;i<=broj;i++)
+              {
+                faktorijel*=i;
+                document.write(i + "!=" + faktorijel + "<br>");
+              }
+           }
+       </script>
+   </head>
+   <body>
+       <h1>Table of Factorials</h1>
+       <br>
+       <script>
+           let broj=prompt("Unesi broj: ");
+           fact(broj);
+       </script>
+   </body>
+</html>
